@@ -1,0 +1,46 @@
+{
+  "video_metadata": {
+    "title": "Global Geopolitics 2026 - Layman's Overview",
+    "language": "Tamil",
+    "style": "Cinematic Photorealistic / 3D Motion Graphics",
+    "text_in_video": "None",
+    "duration": "60 Seconds"
+  },
+  "scenes": [
+    {
+      "scene_id": 1,
+      "visual_prompt": "A high-angle cinematic shot of a massive chess board placed over a glowing digital world map. The pieces are moving automatically. No text. Warm, dramatic lighting.",
+      "audio_script_tamil": "வணக்கம்! இன்று உலக அரசியல் ஒரு பெரிய சதுரங்க ஆட்டம் போல மாறியிருக்கிறது. வல்லரசு நாடுகளுக்கு இடையே நடக்கும் இந்த மோதல், சாதாரண மனிதர்களாகிய நம்மை எப்படி பாதிக்கிறது என்று பார்ப்போம்.",
+      "duration_sec": 10
+    },
+    {
+      "scene_id": 2,
+      "visual_prompt": "Split screen: On one side, a cargo ship stuck near the Strait of Hormuz with oil barrels stacked high. On the other side, a common man at a petrol pump in India looking at a rising digital meter. High emotional contrast.",
+      "audio_script_tamil": "முதலாவதாக, மத்திய கிழக்கு நாடுகளில் நிலவும் போர் பதற்றம். குறிப்பாக ஈரான் மற்றும் அதன் சுற்றியுள்ள பகுதிகளில் நடக்கும் மோதல்களால் கச்சா எண்ணெய் வரத்து பாதிக்கப்பட்டுள்ளது. இதனால் பெட்ரோல், டீசல் விலை உயர்ந்து, உங்கள் வீட்டு சமையலறை வரை அதன் தாக்கம் எதிரொலிக்கிறது.",
+      "duration_sec": 15
+    },
+    {
+      "scene_id": 3,
+      "visual_prompt": "A wide shot of a futuristic drone factory in Europe followed by a field in Ukraine where sunflowers are growing amidst a high-tech defensive wall. Soft sunlight, hopeful but serious tone.",
+      "audio_script_tamil": "அடுத்ததாக, உக்ரைன் - ரஷ்யா போர். நான்கு ஆண்டுகளைக் கடந்தும் இந்த மோதல் தொடர்கிறது. ஆனால் இப்போது இது வெறும் நிலப்பரப்புக்கான போர் மட்டுமல்ல, ஆளில்லா விமானங்கள் மற்றும் செயற்கை நுண்ணறிவு தொழில்நுட்பத்தின் யுத்தமாக மாறியிருக்கிறது.",
+      "duration_sec": 12
+    },
+    {
+      "scene_id": 4,
+      "visual_prompt": "An animation of a golden 'BRICS' logo (without letters, using the 5-color icon) expanding to cover more countries in Asia and Africa. A focus on a busy Indian port with high-tech infrastructure.",
+      "audio_script_tamil": "இன்னொரு பக்கம், இந்தியா போன்ற நாடுகள் உலக அரங்கில் மிக முக்கியமான சக்தியாக வளர்ந்து வருகின்றன. வளர்ந்த நாடுகளை மட்டும் சார்ந்து இருக்காமல், ஆசியா மற்றும் ஆப்பிரிக்க நாடுகள் ஒன்றிணைந்து புதிய பொருளாதார பாதையை உருவாக்கி வருகின்றன.",
+      "duration_sec": 13
+    },
+    {
+      "scene_id": 5,
+      "visual_prompt": "A close-up of a human hand shaking a robotic hand over a table with a small globe. The camera zooms out to show a peaceful sunrise over a modern city. Clear, crisp 4K visuals.",
+      "audio_script_tamil": "சுருக்கமாகச் சொன்னால், 2026-ல் உலகம் தொழில்நுட்பம் மற்றும் புதிய கூட்டணிகளை நோக்கி நகர்கிறது. இந்த மாற்றங்களை புரிந்து கொள்வது நம் எதிர்காலத்திற்கு மிகவும் அவசியம்.",
+      "duration_sec": 10
+    }
+  ],
+  "technical_directives": {
+    "camera_movement": "Smooth transitions, slow pans, and intentional zooms to emphasize human impact.",
+    "color_grading": "Saturated and realistic. Use cooler tones for conflict scenes and warmer tones for progress/India scenes.",
+    "audio_delivery": "Clear, professional voice-over (Tamil) with subtle, non-intrusive ambient background music."
+  }
+}
