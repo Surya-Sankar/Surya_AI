@@ -1,0 +1,32 @@
+{
+  "video_metadata": {
+    "title": "AI for Kids Marketing Hook",
+    "duration_seconds": 8,
+    "aspect_ratio": "16:9",
+    "target_audience": "Parents and Educators",
+    "tone": "Inspirational, Energetic, Modern"
+  },
+  "prompt_details": {
+    "visual_description": "A diverse group of curious children sitting in a bright, futuristic classroom filled with soft glowing holograms. A friendly, floating robot sidekick shaped like a lightbulb winks at the camera. One child taps a transparent tablet, and a 3D colorful DNA strand morphs into a space nebula. The lighting is warm and cinematic, featuring vibrant teals and oranges.",
+    "camera_movement": "A smooth, fast-paced dolly zoom starting from a wide shot of the room, punching into a close-up of a child’s eyes reflecting glowing digital symbols, ending with a slight upward tilt.",
+    "motion_characteristics": "Fluid holographic transitions, playful robotic gestures, and high-speed particle effects representing 'data' moving through the air.",
+    "audio_cues": {
+      "music": "Uplifting, synth-pop track with a driving beat and a 'sparkle' sound effect at the 4-second mark.",
+      "voiceover_vibe": "Warm, professional, and encouraging voice (Age 30-40)."
+    }
+  },
+  "key_frames": [
+    {
+      "timestamp": "0s",
+      "action": "Wide shot: Kids laughing and interacting with floating icons."
+    },
+    {
+      "timestamp": "4s",
+      "action": "Close up: A girl uses a finger to 'swipe' a hologram, her face lighting up with wonder."
+    },
+    {
+      "timestamp": "8s",
+      "action": "Logo Reveal: Smooth fade to a clean white background with the text 'The Future is Simple' appearing in bold typography."
+    }
+  ]
+}
