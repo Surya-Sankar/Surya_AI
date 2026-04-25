@@ -1,0 +1,62 @@
+import os
+import streamlit as st
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+# 1. Load Environment Variables
+load_dotenv()  # This looks for a .env file in the current directory
+api_key = os.getenv("OPENAI_API_KEY")
+
+# 2. Page Configuration
+st.set_page_config(page_title="AI Content Creator", page_icon="✍️")
+st.title("✍️ 100-Word Content Generator")
+
+def generate_content(topic):
+    # Error proofing: Check if API key exists in .env
+    if not api_key:
+        st.error("API Key not found! Please check your .env file for OPENAI_API_KEY.")
+        return
+
+    try:
+        # Initialize the model
+        llm = ChatOpenAI(
+            model="gpt-4o", 
+            temperature=0.7, 
+            api_key=api_key
+        )
+
+        # Define the Prompt
+        prompt = ChatPromptTemplate.from_template(
+            "Write exactly 100 words of high-quality, professional content "
+            "about the following topic: {topic}. "
+            "Focus on clarity and impact."
+        )
+
+        # Chain it together using LCEL
+        chain = prompt | llm | StrOutputParser()
+
+        with st.spinner("Drafting your content..."):
+            response = chain.invoke({"topic": topic})
+            
+            # Display results
+            st.subheader("Generated Content")
+            st.write(response)
+            
+            # Metadata footer
+            word_count = len(response.split())
+            st.divider()
+            st.caption(f"Status: Success | Word Count: {word_count}")
+            
+    except Exception as e:
+        st.error(f"An error occurred during generation: {str(e)}")
+
+# 3. UI Layout
+topic_input = st.text_input("What would you like to write about?", placeholder="e.g. Benefits of Sustainable Finance")
+
+if st.button("Generate"):
+    if topic_input.strip():
+        generate_content(topic_input)
+    else:
+        st.warning("Please enter a topic.")
