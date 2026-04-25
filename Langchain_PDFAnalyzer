@@ -1,0 +1,61 @@
+import streamlit as st
+import os
+from dotenv import load_dotenv
+
+# Updated Imports to avoid warnings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.vectorstores import FAISS
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
+
+load_dotenv()
+print(f"DEBUG: Key found? {os.getenv('OPENAI_API_KEY') is not None}")
+
+def main():
+    st.set_page_config(page_title="Future-Proof PDF Analyzer")
+    st.header("📄 Finance PDF Analyzer")
+
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("API Key missing!")
+        return
+
+    uploaded_file = st.file_uploader("Upload PDF", type="pdf")
+
+    if uploaded_file:
+        # 1. Processing (Same as before)
+        with open("temp.pdf", "wb") as f:
+            f.write(uploaded_file.getvalue())
+        loader = PyPDFLoader("temp.pdf")
+        splits = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100).split_documents(loader.load())
+        vectorstore = FAISS.from_documents(splits, OpenAIEmbeddings())
+        retriever = vectorstore.as_retriever()
+
+        # 2. The Modern Chain (LCEL - No Warnings)
+        llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        
+        template = """Answer the question based only on the following context:
+        {context}
+        
+        Question: {question}
+        """
+        prompt = ChatPromptTemplate.from_template(template)
+
+        # This pipe (|) syntax is the new standard
+        chain = (
+            {"context": retriever, "question": RunnablePassthrough()}
+            | prompt
+            | llm
+            | StrOutputParser()
+        )
+
+        user_query = st.text_input("Ask a question:")
+        if user_query:
+            response = chain.invoke(user_query)
+            st.write("### Analysis:")
+            st.write(response)
+
+if __name__ == "__main__":
+    main()
